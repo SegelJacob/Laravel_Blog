@@ -1,4 +1,8 @@
 body {
-    background: blue;
-    color: white;
+    background: wheat;
+    color: black;
+    max-width: 600px;
+    margin: auto;
+    font-family: sans-serif;
+
 }
