@@ -5,11 +5,10 @@
 
     <body>
         <article>
-            <h1><?= /** @var post $post */
-                $post->title; ?></h1>
+            <h1>{{ $post->title }}</h1>
 
             <div>
-                <?= $post->body; ?>
+                {!! $post->body !!}
             </div>
         </article>
 
