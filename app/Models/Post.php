@@ -10,7 +10,7 @@ class Post extends Model
 {
     use HasFactory;
 
-    public function find($slug)
+    public static function find($slug)
     {
         if (!file_exists($path= resource_path("/posts/{$slug}.html"))){
             throw new ModelNotFoundException();
