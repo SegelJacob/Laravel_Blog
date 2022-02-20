@@ -10,6 +10,6 @@ Route::get('/', function () {
     ]);
 });
 
-Route::get('posts/{post}', fn($slug) => view('post', [
-    'post' => Post::findOrFail($slug)
+Route::get('posts/{post}', fn($id) => view('post', [
+    'post' => Post::findOrFail($id)
 ]));
