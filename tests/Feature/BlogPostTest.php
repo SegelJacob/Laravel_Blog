@@ -37,6 +37,6 @@ class BlogPostTest extends TestCase
     public function test_the_application_returns_an_error_response_for_post_that_does_not_exist()
     {
         $this->get('/posts/foo')
-            ->assertStatus(500);
+            ->assertStatus(404);
     }
 }

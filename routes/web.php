@@ -1,9 +1,7 @@
 <?php
 
 use App\Models\Post;
-use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Route;
-use Spatie\YamlFrontMatter\YamlFrontMatter;
 
 Route::get('/', function () {
 
@@ -13,5 +11,5 @@ Route::get('/', function () {
 });
 
 Route::get('posts/{post}', fn($slug) => view('post', [
-    'post' => Post::find($slug)
-]))->where('post', '[A-z_\-]+');
+    'post' => Post::findOrFail($slug)
+]));
