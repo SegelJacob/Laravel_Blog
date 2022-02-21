@@ -42,7 +42,7 @@ class DatabaseSeeder extends Seeder
             'user_id' => $user->id,
             'slug' => 'sourdough-basics',
             'title' => 'Sourdough Basics',
-            'excerpt' => 'The basics of sustaining and baking with a sourdough starter',
+            'excerpt' => '<p> The basics of sustaining and baking with a sourdough starter <p/>',
             'body' => '<p> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus aliquam id ligula sit amet varius. Pellentesque non purus est. Duis condimentum nunc
                             sagittis ipsum finibus suscipit. Praesent ac magna id turpis tristique tristique a a leo. Phasellus non leo eros. Etiam justo quam, suscipit vel ligula id, accumsan
                             consequat leo. Donec condimentum ullamcorper felis. Vivamus sagittis velit mauris, vulputate mattis erat porttitor in.
@@ -65,7 +65,7 @@ class DatabaseSeeder extends Seeder
             'user_id' => $user->id,
             'slug' => 'feed-starter',
             'title' => 'How to feed your starter',
-            'excerpt' => 'Different hydrations for different loaves is the key',
+            'excerpt' => '<p> Different hydrations for different loaves is the key </p>',
             'body' => '<p> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus aliquam id ligula sit amet varius. Pellentesque non purus est. Duis condimentum nunc
                             sagittis ipsum finibus suscipit. Praesent ac magna id turpis tristique tristique a a leo. Phasellus non leo eros. Etiam justo quam, suscipit vel ligula id, accumsan
                             consequat leo. Donec condimentum ullamcorper felis. Vivamus sagittis velit mauris, vulputate mattis erat porttitor in.
@@ -88,7 +88,7 @@ class DatabaseSeeder extends Seeder
             'user_id' => $user->id,
             'slug' => 'olive-bread',
             'title' => 'Spiced olive rye loaf',
-            'excerpt' => 'Making a spiced olive loaf seemed like a natural combination when I peeked at the leftover jars of condiments in my fridge..and it tasted exceptional!',
+            'excerpt' => '<p> Making a spiced olive loaf seemed like a natural combination when I peeked at the leftover jars of condiments in my fridge..and it tasted exceptional! </p>',
             'body' => '<p> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus aliquam id ligula sit amet varius. Pellentesque non purus est. Duis condimentum nunc
                             sagittis ipsum finibus suscipit. Praesent ac magna id turpis tristique tristique a a leo. Phasellus non leo eros. Etiam justo quam, suscipit vel ligula id, accumsan
                             consequat leo. Donec condimentum ullamcorper felis. Vivamus sagittis velit mauris, vulputate mattis erat porttitor in.
