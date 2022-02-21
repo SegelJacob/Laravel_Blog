@@ -1,13 +1,14 @@
-    <!doctype html>
+<x-layout>
+    <article>
+        <h1>{{ $post->title }}</h1>
 
-    <title>My Blog</title>
-    <link rel="stylesheet" href="/app.css"/>
+        <p>
+            By <a href="#">{{ $post->author->username }}</a> in <a href="/categories/{{ $post->category->slug }}"> {{ $post->category->name }}</a>
+        </p>
 
-    <body>
-        <article>
-            <?= $post; ?>
-        </article>
-
+        <div>
+            {!! $post->body !!}
+        </div>
+    </article>
     <a href="/"> Go Back</a>
-
-    </body>
+</x-layout>

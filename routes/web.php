@@ -1,19 +1,25 @@
 <?php
 
+use App\Models\Category;
+use App\Models\Post;
+use App\Models\User;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
-    return view('posts');
-});
 
-Route::get('posts/{post}', function ($slug) {
-    $path = __DIR__ . "/../resources/posts/{$slug}.html";
-
-    if (! file_exists($path)){
-        return redirect('/');
-    }
-    $post = file_get_contents($path);
-    return view('post', [
-        'post'=> $post
+    return view('posts', [
+        'posts' => Post::latest('published_at')->get()
     ]);
 });
+
+Route::get('posts/{post:slug}', fn(Post $post) => view('post', [
+    'post' => $post
+]));
+
+Route::get('categories/{category:slug}', fn(Category $category) => view('posts', [
+    'posts' => $category->posts
+]));
+
+Route::get('authors/{author:username}', fn(User $author) => view('posts', [
+    'posts' => $author->posts
+]));

@@ -1,34 +1,19 @@
-    <!doctype html>
-
-    <title>My Blog</title>
-    <link rel="stylesheet" href="/app.css"/>
-
-    <body>
+<x-layout>
+    @foreach ($posts as $post)
         <article>
-            <h1> <a href="/posts/basics">Sourdough Basics</a></h1>
+            <h1>
+                <a href="/posts/{{ $post->slug }}">
+                    {{ $post->title }}
+                </a>
+            </h1>
 
             <p>
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab asperiores, aspernatur consequatur cupiditate deserunt ea facilis labore maxime mollitia obcaecati odio officia, praesentium quia reiciendis sed sequi suscipit temporibus tenetur!
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab asperiores, aspernatur consequatur cupiditate deserunt ea facilis labore maxime mollitia obcaecati odio officia, praesentium quia reiciendis sed sequi suscipit temporibus tenetur!
+                By <a href="authors/{{ $post->author->username }}">{{ $post->author->name }}</a> in <a href="/categories/{{ $post->category->slug }}"> {{ $post->category->name }}</a>
             </p>
+
+            <div>
+                {!! $post->excerpt!!}
+            </div>
         </article>
-
-        <article>
-            <h1><a href="/posts/feed_starter">How to feed your sourdough starter</a></h1>
-
-            <p>
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab asperiores, aspernatur consequatur cupiditate deserunt ea facilis labore maxime mollitia obcaecati odio officia, praesentium quia reiciendis sed sequi suscipit temporibus tenetur!
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab asperiores, aspernatur consequatur cupiditate deserunt ea facilis labore maxime mollitia obcaecati odio officia, praesentium quia reiciendis sed sequi suscipit temporibus tenetur!
-            </p>
-        </article>
-
-        <article>
-            <h1><a href="/posts/first_loaf">Making your first loaf</a></h1>
-
-            <p>
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab asperiores, aspernatur consequatur cupiditate deserunt ea facilis labore maxime mollitia obcaecati odio officia, praesentium quia reiciendis sed sequi suscipit temporibus tenetur!
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab asperiores, aspernatur consequatur cupiditate deserunt ea facilis labore maxime mollitia obcaecati odio officia, praesentium quia reiciendis sed sequi suscipit temporibus tenetur!
-            </p>
-        </article>
-
-    </body>
+    @endforeach
+</x-layout>
