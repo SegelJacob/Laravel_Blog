@@ -13,7 +13,6 @@ class Post extends Model
 
     public function category()
     {
-        //belongs to
         return $this->belongsTo(Category::class);
     }
 }
