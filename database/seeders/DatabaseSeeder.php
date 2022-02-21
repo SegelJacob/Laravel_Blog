@@ -20,26 +20,26 @@ class DatabaseSeeder extends Seeder
         Category::truncate();
         Post::truncate();
 
-        $user = User::factory(4)->create();
+        $user = User::factory()->create();
 
-        Category::create([
+        $sweet = Category::create([
             'name' => 'Sweet',
             'slug' => 'sweet'
         ]);
 
-        Category::create([
+        $savoury = Category::create([
             'name' => 'Savoury',
             'slug' => 'savoury'
         ]);
 
-        Category::create([
+        $blog = Category::create([
             'name' => 'Blog',
             'slug' => 'blog'
         ]);
 
         Post::create([
-            'category_id' => '3',
-            'user_id' => '1',
+            'category_id' => $blog->id,
+            'user_id' => $user->id,
             'slug' => 'sourdough-basics',
             'title' => 'Sourdough Basics',
             'excerpt' => 'The basics of sustaining and baking with a sourdough starter',
@@ -61,8 +61,8 @@ class DatabaseSeeder extends Seeder
         ]);
 
         Post::create([
-            'category_id' => '3',
-            'user_id' => '2',
+            'category_id' => $blog->id,
+            'user_id' => $user->id,
             'slug' => 'feed-starter',
             'title' => 'How to feed your starter',
             'excerpt' => 'Different hydrations for different loaves is the key',
@@ -84,8 +84,8 @@ class DatabaseSeeder extends Seeder
         ]);
 
         Post::create([
-            'category_id' => '2',
-            'user_id' => '3',
+            'category_id' => $savoury->id,
+            'user_id' => $user->id,
             'slug' => 'olive-bread',
             'title' => 'Spiced olive rye loaf',
             'excerpt' => 'Making a spiced olive loaf seemed like a natural combination when I peeked at the leftover jars of condiments in my fridge..and it tasted exceptional!',
