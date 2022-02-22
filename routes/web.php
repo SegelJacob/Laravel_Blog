@@ -11,7 +11,7 @@ Route::get('/', function () {
         'posts' => Post::latest('published_at')->get(),
         'categories' => Category::all()
     ]);
-});
+})->name('home');
 
 Route::get('posts/{post:slug}', fn(Post $post) => view('post', [
     'post' => $post
