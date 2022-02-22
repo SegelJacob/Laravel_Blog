@@ -18,7 +18,8 @@ Route::get('posts/{post:slug}', fn(Post $post) => view('post', [
 ]));
 
 Route::get('categories/{category:slug}', fn(Category $category) => view('posts', [
-    'posts' => $category->posts
+    'posts' => $category->posts,
+    'categories' => Category::all()
 ]));
 
 Route::get('authors/{author:username}', fn(User $author) => view('posts', [
