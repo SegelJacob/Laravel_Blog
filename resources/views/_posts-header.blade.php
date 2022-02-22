@@ -3,7 +3,7 @@
         Latest <span class="text-blue-500">Laravel From Scratch</span> News
     </h1>
 
-    <h2 class="inline-flex mt-2">By Lary Laracore <img src="./images/lary-head.svg"
+    <h2 class="inline-flex mt-2">By Lary Laracore <img src="/images/lary-head.svg"
                                                        alt="Head of Lary the mascot"></h2>
 
     <p class="text-sm mt-14">
@@ -33,8 +33,17 @@
                 </button>
 
                 <div x-show="show" class="py-2 absolute bg-gray-100 w-full mt-2 rounded-xl z-50" style="display: none">
+                    <a href="/"
+                       class="block text-left px-3 text-sm leading-6 hover:bg-blue-500 focus:bg-blue-500 hover:text-white focus:text-white"
+                    >
+                        All
+                    </a>
                     @foreach($categories as $category)
-                        <a href="/categories/{{ $category->slug }}">{{ ucfirst($category->name) }}</a>
+                        <a href="/categories/{{ $category->slug }}"
+                           class="block text-left px-3 text-sm leading-6 hover:bg-blue-500 focus:bg-blue-500 hover:text-white focus:text-white"
+                        >
+                            {{ ucfirst($category->name) }}
+                        </a>
                     @endforeach
                 </div>
             </div>
