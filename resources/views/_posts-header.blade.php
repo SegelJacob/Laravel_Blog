@@ -18,6 +18,7 @@
             <x-category-dropdown>
 
                 <x-slot name="trigger">
+
                     <button class="py-2 pl-3 pr-9 text-sm font-semibold w-full lg:w-32 text-left flex lg:inline-flex">
                         {{ isset($currentCategory) ? ucfirst($currentCategory->name) : 'Categories' }}
                         <svg class="transform -rotate-90 absolute pointer-events-none" style="right: 12px;" width="22"
@@ -30,22 +31,16 @@
                             </g>
                         </svg>
                     </button>
+
                 </x-slot>
-                <a href="/"
-                   class="block text-left px-3 text-sm leading-6 hover:bg-blue-500 focus:bg-blue-500 hover:text-white focus:text-white"
-                >
-                    All
-                </a>
+
+                <x-dropdown-item href="/">All</x-dropdown-item>
+
                 @foreach($categories as $category)
-                    <a href="/categories/{{ $category->slug }}"
-                       class="
-                           block text-left px-3 text-sm leading-6
-                           hover:bg-blue-500 focus:bg-blue-500 hover:text-white focus:text-white
-                           {{ isset($currentCategory) && $currentCategory->is($category) ? 'bg-blue-500 text-white' : '' }}
-                           "
-                    >
-                        {{ ucfirst($category->name) }}
-                    </a>
+                    <x-dropdown-item
+                        href="/categories/{{ $category->slug }}"
+                        :active="isset($currentCategory) && $currentCategory->is($category)"
+                    >{{ ucfirst($category->name) }}</x-dropdown-item>
                 @endforeach
             </x-category-dropdown>
 
