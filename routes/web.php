@@ -8,7 +8,8 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
 
     return view('posts', [
-        'posts' => Post::latest('published_at')->get()
+        'posts' => Post::latest('published_at')->get(),
+        'categories' => Category::all()
     ]);
 });
 
