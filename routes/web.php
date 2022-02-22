@@ -19,9 +19,11 @@ Route::get('posts/{post:slug}', fn(Post $post) => view('post', [
 
 Route::get('categories/{category:slug}', fn(Category $category) => view('posts', [
     'posts' => $category->posts,
+    'currentCategory'=> $category,
     'categories' => Category::all()
 ]));
 
 Route::get('authors/{author:username}', fn(User $author) => view('posts', [
-    'posts' => $author->posts
+    'posts' => $author->posts,
+    'categories' => Category::all()
 ]));
