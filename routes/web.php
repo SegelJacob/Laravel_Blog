@@ -9,4 +9,4 @@ Route::get('/', [PostController::class, 'index'])->name('home');
 Route::get('posts/{post:slug}', [PostController::class, 'show']);
 Route::get('register', [RegisterController::class, 'create'])->middleware('guest');
 Route::post('register', [RegisterController::class, 'store'])->middleware('guest');
-Route::post('register', [SessionsController::class, 'destroy']);
+Route::post('logout', [SessionsController::class, 'destroy']);
