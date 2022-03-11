@@ -9,4 +9,9 @@ class SessionsController extends Controller
         auth()->logout();
         return redirect('/')->with('success', 'You have been logged out!');
     }
+
+    public function create()
+    {
+        return view('sessions.create');
+    }
 }
