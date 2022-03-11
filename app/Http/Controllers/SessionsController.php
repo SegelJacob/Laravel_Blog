@@ -22,12 +22,15 @@ class SessionsController extends Controller
             'password' => ['required'],
         ]);
 
-        if (auth()->attempt($credentials)) {
-            return redirect('/')->with('success', 'Welcome Back!');
+        if (!auth()->attempt($credentials)) {
+            return back()
+                ->withInput()
+                ->withErrors(['email' => 'The credentials provided could not be verified']);
+
         }
 
-        return back()
-            ->withInput()
-            ->withErrors(['email' => 'The credentials provided could not be verified']);
+        session()->regenerate();
+
+        return redirect('/')->with('success', 'Welcome Back!');
     }
 }
