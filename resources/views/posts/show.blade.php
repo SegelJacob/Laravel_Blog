@@ -53,7 +53,7 @@
 
                 <section class="col-span-8 col-start-5 mt-10 space-y-6">
                     <x-panel>
-                        <form method="POST" action="/">
+                        <form method="POST" action="/posts/{{ $post->slug }}/comments">
                             @csrf
                             <header class="flex items-center">
                                 <img src="https://i.pravatar.cc/60?u={{ auth()->id() }}" alt="profile avatar" width="40"
@@ -65,8 +65,13 @@
                             </header>
 
                             <div class="mt-8">
-                            <textarea name="body" class="w-full text-sm focus:outline-none focus:ring" id="" rows="5"
-                                      placeholder="Enter your thoughts here!"></textarea>
+                                <textarea
+                                    name="body"
+                                    class="w-full text-sm focus:outline-none focus:ring"
+                                    rows="5"
+                                    placeholder="Enter your thoughts here!">
+
+                                </textarea>
                             </div>
 
                             <div class="flex justify-end mt-6 pt-6 border-t border-gray-200 pt-6"
