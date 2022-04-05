@@ -67,8 +67,13 @@
                                 </header>
 
                                 <div class="mt-8">
-                                    <textarea name="body" class="w-full text-sm p-2" rows="5"
-                                              placeholder="Enter your thoughts here!" required>
+                                    <textarea
+                                        name="body"
+                                        class="w-full text-sm p-2"
+                                        rows="5"
+                                        placeholder="Enter your thoughts here!"
+                                        required
+                                    >
                                     </textarea>
 
                                     @error('body')
