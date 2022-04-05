@@ -67,8 +67,10 @@
                                 </header>
 
                                 <div class="mt-8">
-                                <textarea name="body" class="w-full text-sm p-2" rows="5"
-                                          placeholder="Enter your thoughts here!"></textarea>
+                                    <textarea name="body" class="w-full text-sm p-2" rows="5"
+                                              placeholder="Enter your thoughts here!">
+                                    </textarea>
+
                                 </div>
 
                                 <div class="flex justify-end mt-6 pt-6 border-t border-gray-200 pt-6"
