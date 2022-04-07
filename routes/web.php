@@ -8,12 +8,12 @@ use App\Services\Newsletter;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Validation\ValidationException;
 
-Route::post('newsletter', function () {
+Route::post('newsletter', function (Newsletter $newsletter) {
     request()->validate([
         'email' => 'required|email',
     ]);
     try {
-        (new Newsletter())->subscribe(request('email'));
+        $newsletter->subscribe(request('email'));
 
     } catch (Exception $e) {
         throw ValidationException::withMessages([
