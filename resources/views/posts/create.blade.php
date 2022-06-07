@@ -29,6 +29,17 @@
                     @enderror
                 </div>
                 <div class="mb-6">
+                    <label class="block mb-2 uppercase font-bold text-xs ext-gray-700" for="thumbnail">
+                        Thumbnail
+                    </label>
+                    <input
+                        type="file"
+                        class="border border-gray-400 p-2 w-full"
+                        name="thumbnail"
+                        id="thumbnail"
+                    >
+                </div>
+                <div class="mb-6">
                     <label class="block mb-2 uppercase font-bold text-xs ext-gray-700" for="excerpt">
                         Excerpt
                     </label>
