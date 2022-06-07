@@ -19,8 +19,7 @@
                     rows="5"
                     placeholder="Enter your thoughts here!"
                     required
-                >
-                </textarea>
+                ></textarea>
 
                 @error('body')
                 <span class="text-xs text-red-500">{{ $message }}</span>
