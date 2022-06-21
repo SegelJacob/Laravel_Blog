@@ -1,14 +1,15 @@
 @props(['name','type'=>'text'])
 
-<div class="mb-6">
-    <label class="block mb-2 uppercase font-bold text-xs ext-gray-700" for={{ $name }}>
-        {{ ucwords($name) }}
-    </label>
+<x-form.field>
+    <x-form.label name=" {{ $name }}"/>
 
-    <input type={{ $type }} class="border border-gray-400 p-2 w-full" name={{ $name }} id={{ $name }}
-    value="{{ old($name) }}" required>
-    @error($name)
-    <p class="text-red-500 text-xs mt-2">{{ $message }}</p>
-    @enderror
-</div>
+    <input class="border border-gray-400 p-2 w-full"
+           type={{ $type }}
+               name={{ $name }}
+               id={{ $name }}
+               value="{{ old($name) }}"
+           required
+    >
+    <x-form.error name="{{ $name }}"/>
+</x-form.field>
 
