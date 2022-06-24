@@ -5,40 +5,9 @@
             <form method="POST" action="/sessions" class="mt-10">
                 @csrf
 
-                <div class="mb-6">
-                    <label class="block mb-2 uppercase font-bold text-xs text-gray-700" for="email">
-                        Email
-                    </label>
-                    <input class="border border-gray-400 p-2 w-full rounded-xl"
-                           type="email"
-                           name="email"
-                           id="email"
-                           value="{{ old('email') }}"
-                           required
-                    >
-                    @error('email')
-                    <p class="text-red-500 text-xs mt-1">{{ $message }}</p>
-                    @enderror
-                </div>
-                <div class="mb-6">
-                    <label class="block mb-2 uppercase font-bold text-xs text-gray-700" for="password">
-                        Password
-                    </label>
-                    <input class="border border-gray-400 p-2 w-full rounded-xl"
-                           type="password"
-                           name="password"
-                           id="password"
-                           required
-                    >
-                    @error('password')
-                    <p class="text-red-500 text-xs mt-1">{{ $message }}</p>
-                    @enderror
-                </div>
-                <div class="mb-6">
-                    <button class="bg-blue-400 text-white rounded py-2 px-4 hover:bg-blue-500">
-                        Login
-                    </button>
-                </div>
+                <x-form.input name="email" type="email"></x-form.input>
+                <x-form.input name="password" type="password"></x-form.input>
+                <x-form.button>Log In</x-form.button>
             </form>
         </main>
     </section>
