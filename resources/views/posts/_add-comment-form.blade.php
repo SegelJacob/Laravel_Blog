@@ -29,10 +29,7 @@
 
             <div class="flex justify-end mt-6 pt-6 border-t border-gray-200 pt-6"
             >
-                <button
-                    class="bg-blue-500 hover:bg-blue-600 text-white uppercase font-semibold text-xs rounded-2xl py-2 px-10"
-                    type="submit">Post Comment
-                </button>
+                <x-form.button>Post Comment</x-form.button>
             </div>
 
         </form>

@@ -28,10 +28,7 @@
                     <x-form.error name="category"/>
                 </x-form.field>
 
-                <button
-                    class="bg-blue-500 hover:bg-blue-600 text-white uppercase font-semibold text-xs rounded-2xl py-2 px-10"
-                    type="submit">Publish
-                </button>
+                <x-form.button>Publish</x-form.button>
             </form>
         </x-panel>
     </section>
