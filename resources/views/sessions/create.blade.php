@@ -7,8 +7,8 @@
                 <form method="POST" action="/sessions" class="mt-10">
                     @csrf
 
-                    <x-form.input name="email" type="email"></x-form.input>
-                    <x-form.input name="password" type="password"></x-form.input>
+                    <x-form.input name="email" type="email" autocomplete="username"></x-form.input>
+                    <x-form.input name="password" type="password" autocomplete="new-password"></x-form.input>
                     <x-form.button>Log In</x-form.button>
                 </form>
             </x-panel>
