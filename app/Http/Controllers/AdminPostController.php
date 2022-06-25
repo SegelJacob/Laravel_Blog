@@ -12,4 +12,9 @@ class AdminPostController extends Controller
             'posts' => Post::paginate(50)
         ]);
     }
+
+    public function edit()
+    {
+
+    }
 }
