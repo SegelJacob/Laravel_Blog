@@ -34,4 +34,9 @@ class AdminPostController extends Controller
 
         return redirect('/')->with('success', 'Your post has been created.');
     }
+
+    public function edit(Post $post)
+    {
+        return view('admin.posts.edit', ['post' => $post]);
+    }
 }
